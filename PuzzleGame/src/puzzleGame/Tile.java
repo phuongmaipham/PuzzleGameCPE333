@@ -39,13 +39,8 @@ public class Tile {
 	//movement is possible if the tile is lined up with the hole
 	
 	public boolean move(Point p) {
-		if (p.x == tile_position.x+1 && p.y == tile_position.y) //if the tile horizontally aligned with the empty tile
-			movePossible = true;
-		if (p.x == tile_position.x-1 && p.y == tile_position.y) //if the tile horizontally aligned with the empty tile
-			movePossible = true;
-		if (p.x == tile_position.x && p.y == tile_position.y+1) //if the tile vertically aligned with the empty tile
-			movePossible = true;
-		if (p.x == tile_position.x && p.y == tile_position.y-1) ////if the tile vertically aligned with the empty tile
+		//if the tile horizontally or vertically aligned with the empty tile
+		if ((p.x == tile_position.x+1 && p.y == tile_position.y)||(p.x == tile_position.x-1 && p.y == tile_position.y)||(p.x == tile_position.x && p.y == tile_position.y+1)|| (p.x == tile_position.x && p.y == tile_position.y-1) )//if the tile horizontally aligned with the empty tile
 			movePossible = true;
 		
 		if (movePossible) {
